@@ -2,71 +2,21 @@
     <div class="content-header">Einstellungen</div>
     Hier ausgewählte Services werden auf der Hauptseite angezeigt.
     <div>
-        <form>
-            <div class="form-header">Datenrepositorien</div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
-                    checked>
-                <label class="form-check-label" for="flexSwitchCheckDefault">BU - Allgemeines Repositorium</label>
-            </div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked">
-                <label class="form-check-label" for="flexSwitchCheckChecked">BU - Repositorium des Fachbereichs Physik</label>
-            </div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
-                    checked>
-                <label class="form-check-label" for="flexSwitchCheckDefault">re3data</label>
-            </div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
-                    checked>
-                <label class="form-check-label" for="flexSwitchCheckDefault">Harvard Dataverse</label>
-            </div>
-
-            <div class="form-header">Datenmanagementpläne</div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
-                    checked>
-                <label class="form-check-label" for="flexSwitchCheckDefault">BU - RDMO</label>
-            </div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
-                    checked>
-                <label class="form-check-label" for="flexSwitchCheckDefault">BU - Guidelines zu Förderorganisationen (One-Step-Funderpages)</label>
-            </div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
-                    checked>
-                <label class="form-check-label" for="flexSwitchCheckDefault">DMP-Toolguide</label>
-            </div>
-
-            <div class="form-header">Publikationsserver</div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
-                    checked>
-                <label class="form-check-label" for="flexSwitchCheckDefault">BU - Publikationsserver</label>
-            </div>
-
-            <div class="form-header">Gitlab</div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
-                    checked>
-                <label class="form-check-label" for="flexSwitchCheckDefault">BU - Gitlab des Fachbereichs Informatik</label>
-            </div>
-
-            <div class="form-header">Ontologien</div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
-                    checked>
-                <label class="form-check-label" for="flexSwitchCheckDefault">ACM Computing Classification System</label>
-            </div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
-                    checked>
-                <label class="form-check-label" for="flexSwitchCheckDefault">Algorithm Knowledge Graph Ontology (AlgoData)</label>
-            </div>
-            <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Speichern</button>
+        <form #form="ngForm">
+            <ng-container *ngFor="let group of preferencesService.preferences.groups">
+                <div class="form-header">{{group.label}}</div>
+                <ng-container *ngFor="let entry of group.entries">       
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" 
+                            type="checkbox" 
+                            role="switch" 
+                            [id]="group.name + '-' + entry.id"
+                            [name]="group.name + '-' + entry.id"
+                            [(ngModel)]="entry.active">
+                        <label class="form-check-label" [for]="group.name + '-'  + entry.id">{{entry.label}}</label>
+                    </div>
+                </ng-container> 
+            </ng-container>
         </form>
     </div>
 </div>

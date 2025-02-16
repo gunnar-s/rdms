@@ -2,8 +2,16 @@
     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li>Sie sind hier:&nbsp;&nbsp;</li>
-            <li class="breadcrumb-item"><a href="#">Beliebige Universität</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Forschungsdatenmanagement</li>
+            <li class="breadcrumb-item"><a [routerLink]="['']">Beliebige Universität</a></li>
+            <ng-container *ngFor="let breadcrumb of breadcrumbs; let last = last">
+              <ng-container *ngIf="breadcrumb.label != 'Forschungsdatenmanagement'">
+                <li class="breadcrumb-item"><a [routerLink]="['']">Forschungsdatenmanagement</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ breadcrumb.label }}</li>
+              </ng-container>
+              <ng-container *ngIf="breadcrumb.label == 'Forschungsdatenmanagement'">
+                <li class="breadcrumb-item active" aria-current="page">Forschungsdatenmanagement</li>
+              </ng-container>
+            </ng-container>
         </ol>
     </nav>
 </div>

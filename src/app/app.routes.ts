@@ -11,30 +11,37 @@ export const routes: Routes = [
         path: '',
         component: StartCompComponent,
         title: 'RDMS - Start',
+        data: { breadcrumb: 'Forschungsdatenmanagement' },
     },
     {
         path: 'preferences',
         component: PreferencesCompComponent,
         title: 'RDMS - Einstellungen',
+        data: { breadcrumb: 'Einstellungen' }
     },
     {
         path: 'services',
         component: ServicesCompComponent,
         title: 'RDMS - Services',
+        data: { breadcrumb: 'Services' },
     },
     {
         path: 'team',
         component: TeamCompComponent,
         title: 'RDMS - Team',
+        data: { breadcrumb: 'Team' }
     },
     {
         path: 'whatisit',
         component: WhatisitCompComponent,
-        title: 'RDMS - What is Forschungsdatenmanagement?',
+        title: 'RDMS - Was ist Forschungsdatenmanagement?',
+        data: { breadcrumb: 'Was ist Forschungsdatenmanagement?' }
     },
     {
         path: 'workshops',
         component: WorkshopsCompComponent,
         title: 'RDMS - Kurse und Workshops',
+        data: { breadcrumb: 'Kurse und Workshops' }
     },
+    
 ];
