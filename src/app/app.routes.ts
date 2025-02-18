@@ -5,6 +5,10 @@ import { WhatisitCompComponent } from './whatisit-comp/whatisit-comp.component';
 import { TeamCompComponent } from './team-comp/team-comp.component';
 import { WorkshopsCompComponent } from './workshops-comp/workshops-comp.component';
 import { PreferencesCompComponent } from './preferences-comp/preferences-comp.component';
+import { ContactCompComponent } from './contact-comp/contact-comp.component';
+import { GuidelinesCompComponent } from './guidelines-comp/guidelines-comp.component';
+import { PoliciesCompComponent } from './policies-comp/policies-comp.component';
+import { InfrastructureCompComponent } from './infrastructure-comp/infrastructure-comp.component';
 
 export const routes: Routes = [
     {
@@ -24,6 +28,30 @@ export const routes: Routes = [
         component: ServicesCompComponent,
         title: 'RDMS - Services',
         data: { breadcrumb: 'Services' },
+    },
+    {
+        path: 'guidelines',
+        component: GuidelinesCompComponent,
+        title: 'RDMS - Anleitungen',
+        data: { breadcrumb: 'Anleitungen' }
+    },
+    {
+        path: 'policies',
+        component: PoliciesCompComponent,
+        title: 'RDMS - Richtlinien',
+        data: { breadcrumb: 'Richtlinien' }
+    },
+    {
+        path: 'infrastructure',
+        component: InfrastructureCompComponent,
+        title: 'RDMS - Infrastruktur',
+        data: { breadcrumb: 'Infrastruktur' }
+    },
+    {
+        path: 'contact',
+        component: ContactCompComponent,
+        title: 'RDMS - Kontakt',
+        data: { breadcrumb: 'Kontakt' }
     },
     {
         path: 'team',
