@@ -9,6 +9,8 @@ import { ContactCompComponent } from './contact-comp/contact-comp.component';
 import { GuidelinesCompComponent } from './guidelines-comp/guidelines-comp.component';
 import { PoliciesCompComponent } from './policies-comp/policies-comp.component';
 import { InfrastructureCompComponent } from './infrastructure-comp/infrastructure-comp.component';
+import { NewsCompComponent } from './news-comp/news-comp.component';
+import { EventsCompComponent } from './events-comp/events-comp.component';
 
 export const routes: Routes = [
     {
@@ -22,6 +24,18 @@ export const routes: Routes = [
         component: PreferencesCompComponent,
         title: 'RDMS - Einstellungen',
         data: { breadcrumb: 'Einstellungen' }
+    },
+    {
+        path: 'news',
+        component: NewsCompComponent,
+        title: 'RDMS - Neuigkeiten',
+        data: { breadcrumb: 'Neuigkeiten' },
+    },
+    {
+        path: 'events',
+        component: EventsCompComponent,
+        title: 'RDMS - Events und Termine',
+        data: { breadcrumb: 'Events und Termine' },
     },
     {
         path: 'services',

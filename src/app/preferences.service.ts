@@ -4,8 +4,55 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PreferencesService {
+  public loggedIn: boolean = false;
+
   public preferences: Preferences = {
     groups: [
+      {
+        id: 1,
+        name: "welcome",
+        label: "Willkommensnachricht",
+        entries: [
+          {
+            id: 1,
+            label: "BU - Willkommensnachricht",
+            description: "Willkommensnachricht",
+            link: "",
+            active: false
+          }
+        ],
+        type: "comp"
+      },
+      {
+        id: 1,
+        name: "news",
+        label: "Neuigkeiten",
+        entries: [
+          {
+            id: 1,
+            label: "BU - Neuigkeiten",
+            description: "Neuigkeiten",
+            link: "",
+            active: false
+          }
+        ],
+        type: "comp"
+      },
+      {
+        id: 1,
+        name: "events",
+        label: "Events und Termine",
+        entries: [
+          {
+            id: 1,
+            label: "BU - Events und Termine",
+            description: "Events und Termine",
+            link: "",
+            active: false
+          }
+        ],
+        type: "comp"
+      },
       {
         id: 1,
         name: "datarepos",
@@ -224,6 +271,10 @@ export class PreferencesService {
   savePreferences(): void {
     localStorage.setItem("prefs", JSON.stringify(this.preferences));
   }
+
+  logout(): void {
+    this.loggedIn = false
+  }
 }
 
 export type Preferences = {
@@ -235,6 +286,7 @@ export type Group = {
   name: string,
   label: string,
   entries: Entry[],
+  type?: string
 }
 
 export type Entry = {
@@ -242,5 +294,5 @@ export type Entry = {
   label: string,
   description: string,
   link: string,
-  active: boolean
+  active: boolean,
 }

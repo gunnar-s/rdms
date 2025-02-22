@@ -17,6 +17,11 @@
                             <img src="manage-icon.png" width="30px"/>
                         </a>
                     </li>
+                    <ng-container *ngIf="preferencesService.loggedIn">
+                        <li class="nav-item">
+                            &nbsp;<button (click)="preferencesService.logout()" type="button" class="btn btn-danger">logout</button>
+                        </li>
+                    </ng-container>
                 </ul>
             </div>
         </div>

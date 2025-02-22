@@ -19,5 +19,6 @@ export class PreferencesCompComponent implements OnInit {
     this.ngForm.form.valueChanges.subscribe(x => {
       this.preferencesService.savePreferences();
     })
+    this.preferencesService.loggedIn = true;
   }
 }
