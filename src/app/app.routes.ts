@@ -5,7 +5,6 @@ import { WhatisitCompComponent } from './whatisit-comp/whatisit-comp.component';
 import { TeamCompComponent } from './team-comp/team-comp.component';
 import { WorkshopsCompComponent } from './workshops-comp/workshops-comp.component';
 import { PreferencesCompComponent } from './preferences-comp/preferences-comp.component';
-import { ContactCompComponent } from './contact-comp/contact-comp.component';
 import { GuidelinesCompComponent } from './guidelines-comp/guidelines-comp.component';
 import { PoliciesCompComponent } from './policies-comp/policies-comp.component';
 import { InfrastructureCompComponent } from './infrastructure-comp/infrastructure-comp.component';
@@ -62,16 +61,10 @@ export const routes: Routes = [
         data: { breadcrumb: 'Infrastruktur' }
     },
     {
-        path: 'contact',
-        component: ContactCompComponent,
-        title: 'RDMS - Kontakt',
-        data: { breadcrumb: 'Kontakt' }
-    },
-    {
         path: 'team',
         component: TeamCompComponent,
-        title: 'RDMS - Team',
-        data: { breadcrumb: 'Team' }
+        title: 'RDMS - Team und Kontakt',
+        data: { breadcrumb: 'Team und Kontakt' }
     },
     {
         path: 'whatisit',
