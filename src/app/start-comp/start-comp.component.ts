@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { Entry, PreferencesService } from '../preferences.service';
 import { NgForOf, NgIf, NgComponentOutlet } from '@angular/common';
 import { WelcomeCompComponent } from '../welcome-comp/welcome-comp.component';
-import { NewsCompComponent } from '../news-comp/news-comp.component';
-import { EventsCompComponent } from '../events-comp/events-comp.component';
+import { NewsCompComponent } from '../rdm/news-comp/news-comp.component';
+import { EventsCompComponent } from '../rdm/events-comp/events-comp.component';
 
 @Component({
   selector: 'start-comp',

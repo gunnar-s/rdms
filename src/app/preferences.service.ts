@@ -268,12 +268,20 @@ export class PreferencesService {
     return group.entries.filter(entry => entry.active).length > 0;
   }
 
+  getGroup(name: string): Entry[] {
+    return this.preferences.groups.filter(g => g.name == name).at(0)?.entries!;
+  }
+
   savePreferences(): void {
     localStorage.setItem("prefs", JSON.stringify(this.preferences));
   }
 
   logout(): void {
     this.loggedIn = false
+  }
+
+  login(): void {
+    this.loggedIn = true
   }
 }
 

@@ -7,19 +7,30 @@
             <div id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['']">Studieren</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" [routerLink]="['']">Forschen</a>
-                    </li>
-                    <li class="nav-item">
-                        <a [routerLink]="['/preferences']">
-                            <img src="manage-icon.png" width="30px"/>
+                        <a class="nav-link" [routerLink]="['/studium']">Studium</a>
+                    </li>                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Forschen
                         </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" [routerLink]="['/forschen']">Start</a></li>
+                            <li><a class="dropdown-item" [routerLink]="['/forschen/forschungsdatenmanagement']">Forschungsdatenmanagement</a></li>
+                        </ul>
                     </li>
+                    <ng-container *ngIf="!preferencesService.loggedIn">
+                        <li class="nav-item">
+                            &nbsp;&nbsp;<button (click)="preferencesService.login()" type="button" class="btn btn-success">login</button>
+                        </li>
+                    </ng-container>
                     <ng-container *ngIf="preferencesService.loggedIn">
                         <li class="nav-item">
-                            &nbsp;<button (click)="preferencesService.logout()" type="button" class="btn btn-danger">logout</button>
+                            &nbsp;&nbsp;<a [routerLink]="['/forschen/forschungsdatenmanagement/preferences']">
+                                <img src="manage-icon.png" width="30px"/>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            &nbsp;&nbsp;<button (click)="preferencesService.logout()" type="button" class="btn btn-danger">logout</button>
                         </li>
                     </ng-container>
                 </ul>

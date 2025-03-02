@@ -6,7 +6,7 @@ import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'breadcrumb-comp',
-  imports: [RouterModule, NgIf, NgForOf],
+  imports: [RouterModule, NgForOf, NgIf],
   templateUrl: './breadcrumb-comp.component.html',
   styleUrl: './breadcrumb-comp.component.css'
 })
