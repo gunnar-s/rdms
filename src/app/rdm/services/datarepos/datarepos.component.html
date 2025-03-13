@@ -1,0 +1,32 @@
+<div>
+    <div class="content-header">Datenrepositorien</div>
+    <p style="hyphens: auto; text-align: justify;">
+    Willkommen zur Übersicht für eigene und externe empfohlene Forschungsdatenrepositorien der Universität. Effektive Forschung erfordert nicht nur den Zugang zu zuverlässigen Daten, 
+    sondern auch eine nachhaltige Speicherung und Verfügbarkeit. Forschungsdatenrepositorien spielen eine zentrale Rolle in der Sicherung, Verwaltung und 
+    öffentlichen Zugänglichkeit von Forschungsdaten. Sie ermöglichen es Forschenden, ihre Ergebnisse transparent zu teilen und fördern die Nachnutzung sowie 
+    den wissenschaftlichen Austausch.
+    <br><br>
+    Auf dieser Seite bieten wir Ihnen eine Übersicht über die verfügbaren Repositorien und deren Nutzung. Ob Sie Ihre Daten sicher archivieren, Projekte
+    dokumentieren oder Wissen mit der wissenschaftlichen Gemeinschaft teilen möchten – hier finden Sie wertvolle Informationen und Hilfestellungen.
+    </p>
+    
+    <div class="accordion" id="datarepos">
+        <ng-container *ngFor="let entry of preferencesService.getGroup('datarepos'); index as i">        
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        attr.data-bs-target="#datarepos-{{i}}" aria-expanded="false"
+                        attr.aria-controls="datarepos-{{i}}">
+                        {{entry.label}}
+                    </button>
+                </h2>
+                <div attr.id="datarepos-{{i}}" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        {{entry.description}}<br>
+                        <a attr.href="{{entry.link}}">link</a>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

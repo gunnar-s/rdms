@@ -1,25 +1,33 @@
 import { Routes } from '@angular/router';
-import { ServicesCompComponent } from './services-comp/services-comp.component';
-import { StartCompComponent } from './start-comp/start-comp.component';
-import { WhatisitCompComponent } from './whatisit-comp/whatisit-comp.component';
-import { TeamCompComponent } from './team-comp/team-comp.component';
-import { WorkshopsCompComponent } from './workshops-comp/workshops-comp.component';
+import { ServicesCompComponent } from './rdm/services-comp/services-comp.component';
 import { PreferencesCompComponent } from './preferences-comp/preferences-comp.component';
-import { GuidelinesCompComponent } from './guidelines-comp/guidelines-comp.component';
-import { PoliciesCompComponent } from './policies-comp/policies-comp.component';
-import { InfrastructureCompComponent } from './infrastructure-comp/infrastructure-comp.component';
 import { UniHomeCompComponent } from './uni-home-comp/uni-home-comp.component';
 import { StudiumHomeCompComponent } from './studium-home-comp/studium-home-comp.component';
 import { ForschenHomeCompComponent } from './forschen-home-comp/forschen-home-comp.component';
 import { ForschenCompComponent } from './forschen-comp/forschen-comp.component';
 import { UniCompComponent } from './uni-comp/uni-comp.component';
-import { FdmsCompComponent } from './fdms-comp/fdms-comp.component';
 import { StudiumCompComponent } from './studium-comp/studium-comp.component';
-import { InitiativesComponent } from './rdm/initiatives/initiatives.component';
-import { OntologiesComponent } from './rdm/ontologies/ontologies.component';
-import { MetadatastandardsComponent } from './rdm/metadatastandards/metadatastandards.component';
+import { InitiativesComponent } from './rdm/standards/initiatives/initiatives.component';
 import { NewsComponent } from './rdm/news/news.component';
 import { EventsComponent } from './rdm/events/events.component';
+import { DatareposComponent } from './rdm/services/datarepos/datarepos.component';
+import { DmpComponent } from './rdm/services/dmp/dmp.component';
+import { CodereposComponent } from './rdm/services/coderepos/coderepos.component';
+import { PublicationComponent } from './rdm/services/publication/publication.component';
+import { ElabComponent } from './rdm/services/elab/elab.component';
+import { ServicesHomeComponent } from './rdm/services/services-home/services-home.component';
+import { StandardsHomeComponent } from './rdm/standards/standards-home/standards-home.component';
+import { GuidelinesComponent } from './rdm/standards/guidelines/guidelines.component';
+import { PoliciesComponent } from './rdm/standards/policies/policies.component';
+import { MetadatastandardsComponent } from './rdm/standards/metadatastandards/metadatastandards.component';
+import { OntologiesComponent } from './rdm/standards/ontologies/ontologies.component';
+import { RdmHomeComponent } from './rdm/rdm-home/rdm-home.component';
+import { RdmCompComponent } from './rdm-comp/rdm-comp.component';
+import { ReferenceManagementComponent } from './rdm/services/reference-management/reference-management.component';
+import { WhatisitComponent } from './rdm/whatisit/whatisit.component';
+import { WorkshopsComponent } from './rdm/workshops/workshops.component';
+import { TeamComponent } from './rdm/team/team.component';
+import { InfrastructureComponent } from './rdm/infrastructure/infrastructure.component';
 
 export const routes: Routes = [
     {
@@ -59,13 +67,13 @@ export const routes: Routes = [
                     },                         
                     {
                         path: 'forschungsdatenmanagement',
-                        component: FdmsCompComponent,
+                        component: RdmCompComponent,
                         title: 'RDMS - Start',
                         data: { breadcrumb: 'Forschungsdatenmanagement' },
                         children: [
                             {
                                 path: '',
-                                component: StartCompComponent,
+                                component: RdmHomeComponent,
                                 data: { breadcrumb: 'Start' }
                             },
                             {
@@ -75,40 +83,16 @@ export const routes: Routes = [
                                 data: { breadcrumb: 'Einstellungen' }
                             },
                             {
-                                path: 'services',
-                                component: ServicesCompComponent,
-                                title: 'RDMS - Services',
-                                data: { breadcrumb: 'Services' },
-                            },
-                            {
                                 path: 'events',
                                 component: EventsComponent,
                                 title: 'RDMS - Events und Termine',
                                 data: { breadcrumb: 'Events und Termine' },
                             },
                             {
-                                path: 'guidelines',
-                                component: GuidelinesCompComponent,
-                                title: 'RDMS - Anleitungen',
-                                data: { breadcrumb: 'Anleitungen' }
-                            },
-                            {
                                 path: 'infrastructure',
-                                component: InfrastructureCompComponent,
+                                component: InfrastructureComponent,
                                 title: 'RDMS - Infrastruktur',
                                 data: { breadcrumb: 'Infrastruktur' }
-                            },
-                            {
-                                path: 'initiatives',
-                                component: InitiativesComponent,
-                                title: 'RDMS - Initiativen',
-                                data: { breadcrumb: 'Initiativen' }
-                            },
-                            {
-                                path: 'metadata',
-                                component: MetadatastandardsComponent,
-                                title: 'RDMS - Metadatenstandards',
-                                data: { breadcrumb: 'Metadatenstandards' }
                             },
                             {
                                 path: 'news',
@@ -117,32 +101,112 @@ export const routes: Routes = [
                                 data: { breadcrumb: 'Neuigkeiten' },
                             },
                             {
-                                path: 'ontologies',
-                                component: OntologiesComponent,
-                                title: 'RDMS - Ontologien',
-                                data: { breadcrumb: 'Ontologien' }
+                                path: 'services',
+                                component: ServicesCompComponent,
+                                title: 'RDMS - Services',
+                                data: { breadcrumb: 'Services' },
+                                children: [
+                                    {
+                                        path: '',
+                                        component: ServicesHomeComponent,
+                                        data: { breadcrumb: 'Start' }
+                                    },
+                                    {
+                                        path: 'datarepos',
+                                        component: DatareposComponent,
+                                        title: 'RDMS - Datenrepositorien',
+                                        data: { breadcrumb: 'Datenrepositorien' }
+                                    },                                    
+                                    {
+                                        path: 'dmp',
+                                        component: DmpComponent,
+                                        title: 'RDMS - Datenmanagementpläne',
+                                        data: { breadcrumb: 'Datenmanagementpläne' }
+                                    },
+                                    {
+                                        path: 'coderepos',
+                                        component: CodereposComponent,
+                                        title: 'RDMS - Coderepositorien',
+                                        data: { breadcrumb: 'Coderepositorien' }
+                                    },
+                                    {
+                                        path: 'publication',
+                                        component: PublicationComponent,
+                                        title: 'RDMS - Publikation',
+                                        data: { breadcrumb: 'Publikation' }
+                                    },
+                                    {
+                                        path: 'elab',
+                                        component: ElabComponent,
+                                        title: 'RDMS - elektronisches Laborbuch',
+                                        data: { breadcrumb: 'elektr. Laborbuch' }
+                                    },
+                                    {
+                                        path: 'referencemanagement',
+                                        component: ReferenceManagementComponent,
+                                        title: 'RDMS - Literaturverwaltung',
+                                        data: { breadcrumb: 'Literaturverwaltung' }
+                                    },
+                                ]
                             },
                             {
-                                path: 'policies',
-                                component: PoliciesCompComponent,
-                                title: 'RDMS - Richtlinien',
-                                data: { breadcrumb: 'Richtlinien' }
+                                path: 'standards',
+                                component: ServicesCompComponent,
+                                title: 'RDMS - Anleitungen, Richtlinien und Standards',
+                                data: { breadcrumb: 'Anleitungen, Richtlinien und Standards' },
+                                children: [
+                                    {
+                                        path: '',
+                                        component: StandardsHomeComponent,
+                                        data: { breadcrumb: 'Start' }
+                                    },
+                                    {
+                                        path: 'guidelines',
+                                        component: GuidelinesComponent,
+                                        title: 'RDMS - Anleitungen',
+                                        data: { breadcrumb: 'Anleitungen' }
+                                    },                                    
+                                    {
+                                        path: 'initiatives',
+                                        component: InitiativesComponent,
+                                        title: 'RDMS - Initiativen',
+                                        data: { breadcrumb: 'Initiativen' }
+                                    },
+                                    {
+                                        path: 'metadatastandards',
+                                        component: MetadatastandardsComponent,
+                                        title: 'RDMS - Metadatenstandards',
+                                        data: { breadcrumb: 'Metadatenstandards' }
+                                    },
+                                    {
+                                        path: 'ontologies',
+                                        component: OntologiesComponent,
+                                        title: 'RDMS - Ontologien',
+                                        data: { breadcrumb: 'Ontologien' }
+                                    },
+                                    {
+                                        path: 'policies',
+                                        component: PoliciesComponent,
+                                        title: 'RDMS - Richtlinien',
+                                        data: { breadcrumb: 'Richtlinien' }
+                                    },
+                                ]
                             },
                             {
                                 path: 'team',
-                                component: TeamCompComponent,
+                                component: TeamComponent,
                                 title: 'RDMS - Team und Kontakt',
                                 data: { breadcrumb: 'Team und Kontakt' }
                             },
                             {
                                 path: 'whatisit',
-                                component: WhatisitCompComponent,
+                                component: WhatisitComponent,
                                 title: 'RDMS - Was ist Forschungsdatenmanagement?',
                                 data: { breadcrumb: 'Was ist Forschungsdatenmanagement?' }
                             },
                             {
                                 path: 'workshops',
-                                component: WorkshopsCompComponent,
+                                component: WorkshopsComponent,
                                 title: 'RDMS - Kurse und Workshops',
                                 data: { breadcrumb: 'Kurse und Workshops' }
                             },

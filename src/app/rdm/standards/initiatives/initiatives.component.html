@@ -1,0 +1,22 @@
+<div>
+    <div class="content-header">Initiativen</div>    
+    <div class="accordion" id="initiatives">
+        <ng-container *ngFor="let entry of preferencesService.getGroup('initiatives'); index as i">        
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        attr.data-bs-target="#initiatives-{{i}}" aria-expanded="false"
+                        attr.aria-controls="initiatives-{{i}}">
+                        {{entry.label}}
+                    </button>
+                </h2>
+                <div attr.id="initiatives-{{i}}" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        {{entry.description}}<br>
+                        <a attr.href="{{entry.link}}">link</a>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

@@ -5,7 +5,7 @@
         <nav class="">
             <ul class="">
                 <li class="">
-                    <a [routerLink]="['/forschen/forschungsdatenmanagement']" routerLinkActive="active">Start</a>
+                    <a [routerLink]="['/forschen/forschungsdatenmanagement']" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active">Start</a>
                 </li>
                 <li class="">
                     <a [routerLink]="['/forschen/forschungsdatenmanagement/news']" routerLinkActive="active">Neuigkeiten</a>
@@ -17,8 +17,30 @@
                     <a [routerLink]="['/forschen/forschungsdatenmanagement/whatisit']" routerLinkActive="active">Was ist Forschungsdatenmanagement?</a>
                 </li>
                 <li class="">
-                    <a [routerLink]="['/forschen/forschungsdatenmanagement/services']" routerLinkActive="active">Services</a>
+                    <a [routerLink]="['/forschen/forschungsdatenmanagement/services']" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active">Services</a>
                 </li>
+                <ng-container *ngIf="isServices()">
+                    <ul style="padding-left: 1rem;">
+                    <li class="">
+                        <a [routerLink]="['/forschen/forschungsdatenmanagement/services/datarepos']" routerLinkActive="active">Datenrepositorien</a>
+                    </li>
+                    <li class="">
+                        <a [routerLink]="['/forschen/forschungsdatenmanagement/services/dmp']" routerLinkActive="active">Datenmanagementplan</a>
+                    </li>
+                    <li class="">
+                        <a [routerLink]="['/forschen/forschungsdatenmanagement/services/coderepos']" routerLinkActive="active">Quellcoderepositorien</a>
+                    </li>
+                    <li class="">
+                        <a [routerLink]="['/forschen/forschungsdatenmanagement/services/publication']" routerLinkActive="active">Publikation</a>
+                    </li>
+                    <li class="">
+                        <a [routerLink]="['/forschen/forschungsdatenmanagement/services/elab']" routerLinkActive="active">elektronisches Laborbuch</a>
+                    </li>
+                    <li class="">
+                        <a [routerLink]="['/forschen/forschungsdatenmanagement/services/referencemanagement']" routerLinkActive="active">Literaturverwaltung</a>
+                    </li>
+                    </ul>             
+                </ng-container>
                 <li class="">
                     <a [routerLink]="['/forschen/forschungsdatenmanagement/workshops']" routerLinkActive="active">Schulungen</a>
                 </li>
@@ -26,20 +48,27 @@
                     <a [routerLink]="['/forschen/forschungsdatenmanagement/infrastructure']" routerLinkActive="active">Infrastruktur</a>
                 </li>
                 <li class="">
-                    <a [routerLink]="['/forschen/forschungsdatenmanagement/guidelines']" routerLinkActive="active">Anleitungen</a>
+                    <a [routerLink]="['/forschen/forschungsdatenmanagement/standards']" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active">Anleitungen, Richtlinien und Standards</a>
                 </li>
-                <li class="">
-                    <a [routerLink]="['/forschen/forschungsdatenmanagement/policies']" routerLinkActive="active">Richtlinien</a>
-                </li>
-                <li>
-                    <a [routerLink]="['/forschen/forschungsdatenmanagement/initiatives']" routerLinkActive="active">Initiativen</a>
-                </li>
-                <li>
-                    <a [routerLink]="['/forschen/forschungsdatenmanagement/ontologies']" routerLinkActive="active">Ontologien</a>
-                </li>
-                <li>
-                    <a [routerLink]="['/forschen/forschungsdatenmanagement/metadata']" routerLinkActive="active">Metadatenstandards</a>
-                </li>
+                <ng-container *ngIf="isStandards()">
+                    <ul style="padding-left: 1rem;">
+                    <li class="">
+                        <a [routerLink]="['/forschen/forschungsdatenmanagement/standards/guidelines']" routerLinkActive="active">Anleitungen</a>
+                    </li>
+                    <li class="">
+                        <a [routerLink]="['/forschen/forschungsdatenmanagement/standards/policies']" routerLinkActive="active">Richtlinien</a>
+                    </li>
+                    <li class="">
+                        <a [routerLink]="['/forschen/forschungsdatenmanagement/standards/ontologies']" routerLinkActive="active">Ontologien</a>
+                    </li>
+                    <li class="">
+                        <a [routerLink]="['/forschen/forschungsdatenmanagement/standards/metadatastandards']" routerLinkActive="active">Metadatenstandards</a>
+                    </li>
+                    <li class="">
+                        <a [routerLink]="['/forschen/forschungsdatenmanagement/standards/initiatives']" routerLinkActive="active">Initiativen</a>
+                    </li>
+                    </ul>             
+                </ng-container>
                 <li>
                     <a [routerLink]="['/forschen/forschungsdatenmanagement/team']" routerLinkActive="active">Team und Kontakt</a>
                 </li>

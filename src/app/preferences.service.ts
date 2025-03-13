@@ -161,6 +161,160 @@ export class PreferencesService {
             description: "AlgoData",
             link: "https://algodata.mardi4nfdi.de/static/widoco/v1/index-en.html",
             active: true
+          },
+          {
+            id: 3,
+            label: "ChEBI",
+            description: " Chemical Entities of Biological Interest",
+            link: "",
+            active: true
+          },
+          {
+            id: 4,
+            label: "RXNO",
+            description: "RXNO",
+            link: "",
+            active: true
+          },
+          {
+            id: 4,
+            label: "CHMO",
+            description: "Chemical Methods Ontology",
+            link: "",
+            active: true
+          },
+          {
+            id: 5,
+            label: "UO",
+            description: "Units of measurement ontology",
+            link: "",
+            active: true
+          },
+          {
+            id: 6,
+            label: "EDAM-Ontology",
+            description: "EDAM-Ontology",
+            link: "",
+            active: true
+          },
+          {
+            id: 7,
+            label: "GSSO",
+            description: "Gender, Sex, and Sexual Orientation Ontology",
+            link: "",
+            active: false
+          },
+          {
+            id: 8,
+            label: "DUO",
+            description: "Data Use Ontology",
+            link: "",
+            active: false
+          },
+          {
+            id: 9,
+            label: "Mondo",
+            description: "Mondo Disease Ontology",
+            link: "",
+            active: false
+          },
+          {
+            id: 10,
+            label: "HPO",
+            description: "Human Phenotype Ontology",
+            link: "",
+            active: false
+          },
+          {
+            id: 11,
+            label: "BTO",
+            description: "BRENDA Tissue and Enzyme Source Ontology",
+            link: "",
+            active: false
+          },
+          {
+            id: 12,
+            label: "Uberon",
+            description: "Uberon",
+            link: "",
+            active: false
+          },
+          {
+            id: 13,
+            label: "GenEpiO",
+            description: "Genomic Epidemiology Ontology",
+            link: "",
+            active: false
+          },
+          {
+            id: 14,
+            label: "ATO",
+            description: "Animal Trait Ontology",
+            link: "",
+            active: false
+          },
+          {
+            id: 15,
+            label: "EOL",
+            description: "Enviroment Ontology for Livestock",
+            link: "",
+            active: false
+          },
+          {
+            id: 16,
+            label: "AHOL",
+            description: "Animal Health Ontology for Livestock",
+            link: "",
+            active: false
+          },
+          {
+            id: 16,
+            label: "SNOMEDCT",
+            description: "Systematized Nomenclature of Medicine-Clinical Terms",
+            link: "",
+            active: false
+          },
+          {
+            id: 17,
+            label: "ELLST",
+            description: "European Language Social Science Thesaurus",
+            link: "",
+            active: false
+          },
+          {
+            id: 18,
+            label: "SMI",
+            description: "Smart Musical Instruments Ontology",
+            link: "",
+            active: false
+          },
+          {
+            id: 19,
+            label: "CIDOC CRM",
+            description: "CIDOC Conceptual Reference Model",
+            link: "",
+            active: false
+          },
+          {
+            id: 20,
+            label: "FRBR in OWL2 DL Ontology",
+            description: "Functional Requirements for Bibliographic Record in OWL2 DL Ontology",
+            link: "",
+            active: false
+          },
+          {
+            id: 21,
+            label: "OntoSoft",
+            description: "OntoSoft",
+            link: "",
+            active: false
+          },
+          {
+            id: 22,
+            label: "WikiProject Ontology",
+            description: "WikiProject Ontology",
+            link: "",
+            active: false
           }
         ]
       },
@@ -204,6 +358,118 @@ export class PreferencesService {
             link: "#",
             active: true
           },
+          {
+            id: 6,
+            label: "LIDO",
+            description: "Metadatenstandard",
+            link: "#",
+            active: false
+          },
+          {
+            id: 7,
+            label: "EAD",
+            description: "Metadatenstandard",
+            link: "#",
+            active: false
+          },
+          {
+            id: 8,
+            label: "MARC21",
+            description: "Metadatenstandard",
+            link: "#",
+            active: false
+          },
+          {
+            id: 9,
+            label: "CIDOC CRM",
+            description: "Metadatenstandard",
+            link: "#",
+            active: false
+          },
+          {
+            id: 10,
+            label: "CodeMeta",
+            description: "Metadatenstandard",
+            link: "#",
+            active: false
+          },
+          {
+            id: 11,
+            label: "Citation CFF",
+            description: "Metadatenstandard",
+            link: "#",
+            active: false
+          },
+          {
+            id: 12,
+            label: "Darwin Core",
+            description: "Metadatenstandard",
+            link: "#",
+            active: true
+          },
+          {
+            id: 13,
+            label: "EML",
+            description: "Metadatenstandard",
+            link: "#",
+            active: false
+          },
+          {
+            id: 14,
+            label: "Pangaea",
+            description: "Metadatenstandard",
+            link: "#",
+            active: false
+          },
+          {
+            id: 15,
+            label: "Bioschemas.org",
+            description: "Metadatenstandard",
+            link: "#",
+            active: false
+          },
+          {
+            id: 16,
+            label: "GND",
+            description: "Metadatenstandard",
+            link: "#",
+            active: false
+          },
+          {
+            id: 17,
+            label: "DCAT-AP",
+            description: "Metadatenstandard",
+            link: "#",
+            active: false
+          },
+          {
+            id: 18,
+            label: "Schema.org",
+            description: "Metadatenstandard",
+            link: "#",
+            active: false
+          },
+          {
+            id: 19,
+            label: "German Central Health Studyhub",
+            description: "Metadatenstandard",
+            link: "#",
+            active: false
+          },
+          {
+            id: 20,
+            label: "OAI-PMH",
+            description: "Metadatenstandard",
+            link: "#",
+            active: false
+          },
+          {
+            id: 7,
+            label: "WikiData",
+            description: "Metadatenstandard",
+            link: "#",
+            active: false
+          },
         ]
       },
       {
@@ -221,7 +487,7 @@ export class PreferencesService {
           {
             id: 2,
             label: "EOSC",
-            description: "european Open Science Cloud",
+            description: "European Open Science Cloud",
             link: "https://eosc-portal.eu",
             active: true
           },
@@ -234,24 +500,185 @@ export class PreferencesService {
           },
           {
             id: 4,
+            label: "BERD@MFDI",
+            description: "",
+            link: "https://base4nfdi.de",
+            active: false
+          },
+          {
+            id: 5,
+            label: "KonsortSWD",
+            description: "",
+            link: "https://base4nfdi.de",
+            active: false
+          },
+          {
+            id: 6,
+            label: "NFDI4Culture",
+            description: "",
+            link: "https://base4nfdi.de",
+            active: false
+          },
+          {
+            id: 7,
+            label: "NFDI4Memory",
+            description: "",
+            link: "https://base4nfdi.de",
+            active: false
+          },
+          {
+            id: 8,
+            label: "NFDI4Objects",
+            description: "",
+            link: "https://base4nfdi.de",
+            active: false
+          },
+          {
+            id: 9,
+            label: "Text+",
+            description: "",
+            link: "https://base4nfdi.de",
+            active: false
+          },
+          {
+            id: 10,
             label: "NFDI4DataScience",
             description: "NFDI für Datenwissenschaft und Künstliche Intelligenz",
             link: "https://base4nfdi.de",
             active: true
           },
           {
-            id: 5,
+            id: 11,
+            label: "NFDI4Energy",
+            description: "",
+            link: "https://base4nfdi.de",
+            active: false
+          },
+          {
+            id: 12,
+            label: "NFDI4Ing",
+            description: "",
+            link: "https://base4nfdi.de",
+            active: true
+          },
+          {
+            id: 13,
+            label: "NFDI-MatWerk",
+            description: "",
+            link: "https://base4nfdi.de",
+            active: false
+          },
+          {
+            id: 14,
             label: "NFDIxCS",
             description: "NFDI für Computer Science",
             link: "https://base4nfdi.de",
             active: true
           },
           {
-            id: 6,
+            id: 15,
+            label: "DataPLANT",
+            description: "",
+            link: "https://base4nfdi.de",
+            active: false
+          },
+          {
+            id: 16,
+            label: "FAIRagro",
+            description: "",
+            link: "https://base4nfdi.de",
+            active: false
+          },
+          {
+            id: 17,
+            label: "NFDI4Immuno",
+            description: "",
+            link: "https://base4nfdi.de",
+            active: false
+          },
+          {
+            id: 18,
+            label: "GHGA",
+            description: "",
+            link: "https://base4nfdi.de",
+            active: false
+          },
+          {
+            id: 19,
+            label: "NFDI4Biodiversity",
+            description: "",
+            link: "https://base4nfdi.de",
+            active: false
+          },
+          {
+            id: 20,
+            label: "NFDI4BIOIMAGE",
+            description: "",
+            link: "https://base4nfdi.de",
+            active: false
+          },
+          {
+            id: 21,
+            label: "NFDI4Health",
+            description: "",
+            link: "https://base4nfdi.de",
+            active: false
+          },
+          {
+            id: 22,
+            label: "NFDI4Micobiota",
+            description: "",
+            link: "https://base4nfdi.de",
+            active: false
+          },
+          {
+            id: 23,
+            label: "DAPHNE4NFDI",
+            description: "",
+            link: "https://base4nfdi.de",
+            active: false
+          },
+          {
+            id: 24,
+            label: "FAIRmat",
+            description: "",
+            link: "https://base4nfdi.de",
+            active: false
+          },
+          {
+            id: 25,
+            label: "NFDI4Cat",
+            description: "",
+            link: "https://base4nfdi.de",
+            active: false
+          },
+          {
+            id: 26,
             label: "MaRDI",
             description: "Mathematische Forschungsdateninitiative",
             link: "https://base4nfdi.de",
             active: true
+          },
+          {
+            id: 27,
+            label: "NFDI4Chem",
+            description: "",
+            link: "https://base4nfdi.de",
+            active: false
+          },
+          {
+            id: 28,
+            label: "NFDI4Earth",
+            description: "",
+            link: "https://base4nfdi.de",
+            active: false
+          },
+          {
+            id: 29,
+            label: "PUNCH4NFDI",
+            description: "",
+            link: "https://base4nfdi.de",
+            active: false
           },
         ]
       }

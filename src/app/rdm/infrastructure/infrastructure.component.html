@@ -1,0 +1,52 @@
+<div>
+    <div class="content-header">Labore und Gerätschaften</div>
+    <p style="hyphens: auto; text-align: justify;">
+        Willkommen auf unserer Seite für Labor- und Gerätschaftenübersicht! An unserer Universität bieten wir eine Vielzahl modernster Labore und hochspezialisierter Ausrüstungen, die sowohl für Forschung als auch Lehre genutzt werden. Hier finden Sie detaillierte Informationen zu unseren Chemie-, Physik-, Biologie- und Informatiklaboren sowie zu weiteren spezialisierten Einrichtungen wie dem Teilchenbeschleuniger- und Windkanallabor. Unsere Labore sind mit modernster Technologie ausgestattet, um Ihnen die besten Voraussetzungen für Ihre wissenschaftlichen Arbeiten zu bieten. Entdecken Sie die vielfältigen Möglichkeiten, die Ihnen unsere Forschungseinrichtungen bieten, und erfahren Sie, wie sie Sie bei Ihren Projekten unterstützen können. Tauchen Sie ein in die Welt der Wissenschaft und Innovation an unserer Universität!
+    </p>
+    <div style="margin-top: 10px;">   
+        <h4>Labore</h4> 
+        <div class="accordion" id="labs">
+            <ng-container *ngFor="let lab of infrastructures.laboratories; index as i">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            attr.data-bs-target="#lab-{{i}}" aria-expanded="false"
+                            attr.aria-controls="lab-{{i}}">
+                            {{lab.name}}
+                        </button>
+                    </h2>
+                    <div attr.id="lab-{{i}}" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            {{lab.description}}<br>
+                            Mehr Informationen: {{lab.link}}<br>
+                            {{lab.room}}
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+    <div style="margin-top: 20px;"> 
+        <h4>Gerätschaften</h4>   
+        <div class="accordion" id="facs">
+            <ng-container *ngFor="let facs of infrastructures.facilities; index as i">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            attr.data-bs-target="#facs-{{i}}" aria-expanded="false"
+                            attr.aria-controls="facs-{{i}}">
+                            {{facs.name}}
+                        </button>
+                    </h2>
+                    <div attr.id="facs-{{i}}" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            {{facs.description}}<br>
+                            Mehr Informationen: {{facs.link}}<br>
+                            {{facs.room}}
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

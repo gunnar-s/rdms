@@ -1,10 +1,10 @@
 <div>
-    <h3>Neuigkeiten</h3>
+    <div class="content-header">Neuigkeiten</div>
     <ng-container *ngFor="let news of dataservice.news; index as i">
         <div class="card mb-3">
             <div class="row g-0">
             <div class="col-md-4">
-                <img src="missing.png" class="img-fluid rounded-start" alt="{{news.title}}">
+                <img src="missing.png" class="img-fluid rounded-start" style="height: 150px" alt="{{news.title}}">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
