@@ -19,7 +19,12 @@
                                         <div attr.id="{{group.name}}-{{i}}" class="accordion-collapse collapse">
                                             <div class="accordion-body">
                                                 {{entry.description}}<br>
-                                                <a attr.href="{{entry.link}}">link</a>
+                                                <ng-container *ngIf="entry.internallink">
+                                                    <a [routerLink]="entry.link">link</a>
+                                                </ng-container>
+                                                <ng-container *ngIf="!entry.internallink">
+                                                    <a attr.href="{{entry.link}}" target="_blank" rel="noopener noreferrer">link</a>
+                                                </ng-container>
                                             </div>
                                         </div>
                                     </div>

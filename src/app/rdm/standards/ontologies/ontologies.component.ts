@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { NgForOf } from '@angular/common';
+import { NgForOf, NgIf } from '@angular/common';
 import { PreferencesService } from '../../../preferences.service';
 
 @Component({
   selector: 'ontologies',
-  imports: [NgForOf],
+  imports: [NgForOf, NgIf],
   templateUrl: './ontologies.component.html',
   styleUrl: './ontologies.component.css'
 })

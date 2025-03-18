@@ -4,10 +4,11 @@ import { Entry, PreferencesService } from '../../preferences.service';
 import { NewsCompComponent } from '../news-comp/news-comp.component';
 import { EventsCompComponent } from '../events-comp/events-comp.component';
 import { WelcomeCompComponent } from '../welcome-comp/welcome-comp.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'rdm-home',
-  imports: [NgForOf, NgIf, NgComponentOutlet, WelcomeCompComponent, NewsCompComponent, EventsCompComponent],
+  imports: [NgForOf, NgIf, NgComponentOutlet, WelcomeCompComponent, NewsCompComponent, EventsCompComponent, RouterModule],
   templateUrl: './rdm-home.component.html',
   styleUrl: './rdm-home.component.css'
 })

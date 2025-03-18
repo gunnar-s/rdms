@@ -1,22 +1,27 @@
 <div>
     <div class="content-header">Ontologien</div>
-    <div class="accordion" id="ontologies">
-        <ng-container *ngFor="let entry of preferencesService.getGroup('ontologies'); index as i">        
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        attr.data-bs-target="#ontologies-{{i}}" aria-expanded="false"
-                        attr.aria-controls="ontologies-{{i}}">
-                        {{entry.label}}
-                    </button>
-                </h2>
-                <div attr.id="ontologies-{{i}}" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                        {{entry.description}}<br>
-                        <a attr.href="{{entry.link}}">link</a>
+    <ng-container *ngFor="let category of preferencesService.getCategories()">
+        <ng-container *ngIf="preferencesService.getGroupAndCategory('ontologies', category).length > 0">
+        <h4 style="margin-top: 30px">{{category}}</h4>
+        <div class="accordion" id="{{category}}">
+            <ng-container *ngFor="let entry of preferencesService.getGroupAndCategory('ontologies', category); index as i">        
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            attr.data-bs-target="#{{category}}-{{i}}" aria-expanded="false"
+                            attr.aria-controls="{{category}}-{{i}}">
+                            {{entry.label}}
+                        </button>
+                    </h2>
+                    <div attr.id="{{category}}-{{i}}" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            {{entry.description}}<br>
+                            <a attr.href="{{entry.link}}" target="_blank" rel="noopener noreferrer">link</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </ng-container>
+        </div>
         </ng-container>
-    </div>
+    </ng-container>
 </div>
