@@ -28,13 +28,14 @@ import { WhatisitComponent } from './rdm/whatisit/whatisit.component';
 import { WorkshopsComponent } from './rdm/workshops/workshops.component';
 import { TeamComponent } from './rdm/team/team.component';
 import { InfrastructureComponent } from './rdm/infrastructure/infrastructure.component';
+import { ConsultingComponent } from './rdm/consulting/consulting.component';
 
 export const routes: Routes = [
     {
         path: '',
         component: UniCompComponent,
-        title: 'Beliebige Universität - Start',
-        data: { breadcrumb: 'Beliebige Universität' },
+        title: 'Universität - Start',
+        data: { breadcrumb: 'PLACEHOLDER' },
         children: [
             {
                 path: '',
@@ -81,6 +82,12 @@ export const routes: Routes = [
                                 component: PreferencesCompComponent,
                                 title: 'RDMS - Einstellungen',
                                 data: { breadcrumb: 'Einstellungen' }
+                            },
+                            {
+                                path: 'consulting',
+                                component: ConsultingComponent,
+                                title: 'RDMS - Beratung',
+                                data: { breadcrumb: 'Beratung' },
                             },
                             {
                                 path: 'events',

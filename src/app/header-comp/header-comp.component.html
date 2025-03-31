@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-xxl">
             <a [routerLink]="['/']" class="navbar-brand" style="font-size: 20pt">
-                <img src="logo.png" width="80px" class="d-inline-block align-text-mid" /> Beliebige Universität
+                <img src="logo.png" width="80px" class="d-inline-block align-text-mid" /> {{configService.config.name}}
             </a>
             <div id="navbarNav">
                 <ul class="navbar-nav">
@@ -15,7 +15,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" [routerLink]="['/forschen']">Start</a></li>
-                            <li><a class="dropdown-item" [routerLink]="['/forschen']">Forschung an der Beliebigen Universität</a></li>
+                            <li><a class="dropdown-item" [routerLink]="['/forschen']">Forschung an der {{configService.config.name}}</a></li>
                             <li><a class="dropdown-item" [routerLink]="['/forschen']">Forschungsverbünde</a></li>
                             <li><a class="dropdown-item" [routerLink]="['/forschen']">Ethikkommission</a></li>
                             <li><a class="dropdown-item" [routerLink]="['/forschen/forschungsdatenmanagement']">Forschungsdatenmanagement</a></li>

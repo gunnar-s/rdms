@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConfigService } from '../config.service';
 
 @Component({
   selector: 'uni-home-comp',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './uni-home-comp.component.css'
 })
 export class UniHomeCompComponent {
-
+  constructor(public configService: ConfigService) {}
 }

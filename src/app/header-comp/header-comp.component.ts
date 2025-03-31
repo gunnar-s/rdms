@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { PreferencesService } from '../preferences.service';
 import { NgIf } from '@angular/common';
+import { ConfigService } from '../config.service';
 
 @Component({
   selector: 'header-comp',
@@ -10,5 +11,5 @@ import { NgIf } from '@angular/common';
   styleUrl: './header-comp.component.css'
 })
 export class HeaderCompComponent {
-  constructor(public  preferencesService: PreferencesService) { }
+  constructor(public preferencesService: PreferencesService, public configService: ConfigService) { }
 }

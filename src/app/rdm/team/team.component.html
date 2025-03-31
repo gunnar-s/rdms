@@ -1,7 +1,7 @@
 <div>
     <div class="content-header">Team und Kontakt</div>
     <p style="hyphens: auto; text-align: justify;">Auf dieser Seite stellt sich das Team für Forschungsdatenmanagement vor. Allgemeine Anfragen können gerne an
-    forschungsdatenmanagement&#64;bu.com gerichtet werden oder ihr kommt Mo-Fr zwischen 9:00 und 16:00 in unserm Büro 
+    forschungsdatenmanagement&#64;{{configService.config.domain}} gerichtet werden oder ihr kommt Mo-Fr zwischen 9:00 und 16:00 in unserm Büro 
     Raum 402 im Gebäude B vorbei.</p>
     <br>
     <ng-container *ngFor="let ds of datastewards">
@@ -16,7 +16,7 @@
                     <p class="card-text">
                         {{ds.description}}
                     </p>
-                    <p class="card-text"><small class="text-body-secondary">{{ds.special.join(', ')}}</small> - {{ds.email}}</p>
+                    <p class="card-text"><small class="text-body-secondary">{{ds.special.join(', ')}}</small> - {{ds.firstname}}.{{ds.lastname}}&#64;{{configService.config.domain}}</p>
                 </div>
                 </div>
             </div>

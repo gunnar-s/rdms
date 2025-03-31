@@ -1,12 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Preferences } from "../preferences.service";
 
-@Injectable({
-  providedIn: 'root'
-})
-export class PreferencesService {
-  public loggedIn: boolean = false;
-
-  public preferences: Preferences = {
+const preferences: Preferences = {
     groups: [
       {
         id: 1,
@@ -18,7 +12,7 @@ export class PreferencesService {
             label: "BU - Willkommensnachricht",
             description: "Willkommensnachricht",
             link: "",
-            active: false
+            active: true
           }
         ],
         type: "comp"
@@ -33,7 +27,7 @@ export class PreferencesService {
             label: "BU - Neuigkeiten",
             description: "Neuigkeiten",
             link: "",
-            active: false
+            active: true
           }
         ],
         type: "comp"
@@ -48,7 +42,7 @@ export class PreferencesService {
             label: "BU - Events und Termine",
             description: "Events und Termine",
             link: "",
-            active: false
+            active: true
           }
         ],
         type: "comp"
@@ -752,8 +746,8 @@ export class PreferencesService {
           {
             id: 29,
             label: "PUNCH4NFDI",
-            description: "",
-            link: "https://base4nfdi.de",
+            description: "PUNCH4NFDI is the NFDI consortium of particle, astro-, astroparticle, hadron and nuclear physics, representing about 9.000 scientists with a Ph.D. in Germany, from universities, the Max Planck society, the Leibniz Association, and the Helmholtz Association. PUNCH physics addresses the fundamental constituents of matter and their interactions, as well as their role for the development of the largest structures in the universe - stars and galaxies.",
+            link: "https://www.punch4nfdi.de/",
             category: "Naturwissenschaften",
             active: false
           },
@@ -761,122 +755,3 @@ export class PreferencesService {
       }
     ],
   }
-
-  constructor() {
-    // if (localStorage.getItem("prefs") != null) {
-    //   this.preferences = JSON.parse(localStorage.getItem("prefs")!);
-    // } 
-  }
-
-  groupNotEmpty(group: Group): boolean {
-    return group.entries.filter(entry => entry.active).length > 0;
-  }
-
-  getGroup(name: string): Entry[] {
-    return this.preferences.groups.filter(g => g.name == name).at(0)?.entries!;
-  }
-
-  getGroupAndCategory(name: string, category: string): Entry[] {
-    return this.preferences.groups.filter(g => g.name == name).at(0)?.entries!.filter(e => e.category == category)!;
-  }
-
-  getCategories(): string[] {
-    return ["Allgemein", "Ingenieurwissenschaften", "Naturwissenschaften", "Geistes- & Sozialwissenschaften", "Lebenswissenschaften"];
-  }
-
-  savePreferences(): void {
-    localStorage.setItem("prefs", JSON.stringify(this.preferences));
-  }
-
-  logout(): void {
-    this.loggedIn = false
-  }
-
-  login(): void {
-    this.loggedIn = true
-  }
-
-  setAllClear(): void {
-    this.preferences.groups.flatMap(g => g.entries).forEach(e => e.active = false);
-  }
-
-  setDefaultInformatikUser(): void {
-    this.setAllClear();
-    this.preferences.groups.filter(g => g.name == "events").at(0)!.entries.at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "datarepos").at(0)!.entries.filter(e => e.id == 1).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "datarepos").at(0)!.entries.filter(e => e.id == 6).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "dmp").at(0)!.entries.filter(e => e.id == 1).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "sourcerepos").at(0)!.entries.filter(e => e.id == 1).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "ontologies").at(0)!.entries.filter(e => e.id == 1).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "metadata").at(0)!.entries.filter(e => e.id == 11).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "initiatives").at(0)!.entries.filter(e => e.id == 10).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "initiatives").at(0)!.entries.filter(e => e.id == 14).at(0)!.active = true;
-  }
-
-  setDefaultPhysikUser(): void {
-    this.setAllClear();
-    this.preferences.groups.filter(g => g.name == "events").at(0)!.entries.at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "datarepos").at(0)!.entries.filter(e => e.id == 2).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "datarepos").at(0)!.entries.filter(e => e.id == 5).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "dmp").at(0)!.entries.filter(e => e.id == 1).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "ontologies").at(0)!.entries.filter(e => e.id == 5).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "metadata").at(0)!.entries.filter(e => e.id == 4).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "metadata").at(0)!.entries.filter(e => e.id == 5).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "initiatives").at(0)!.entries.filter(e => e.id == 29).at(0)!.active = true;
-  }
-
-  setDefaultGeistesSozialUser(): void {    
-    this.setAllClear();
-    this.preferences.groups.filter(g => g.name == "datarepos").at(0)!.entries.filter(e => e.id == 1).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "datarepos").at(0)!.entries.filter(e => e.id == 5).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "dmp").at(0)!.entries.filter(e => e.id == 1).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "publication").at(0)!.entries.filter(e => e.id == 1).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "ontologies").at(0)!.entries.filter(e => e.id == 17).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "ontologies").at(0)!.entries.filter(e => e.id == 18).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "ontologies").at(0)!.entries.filter(e => e.id == 19).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "ontologies").at(0)!.entries.filter(e => e.id == 20).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "ontologies").at(0)!.entries.filter(e => e.id == 21).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "ontologies").at(0)!.entries.filter(e => e.id == 22).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "metadata").at(0)!.entries.filter(e => e.id == 4).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "metadata").at(0)!.entries.filter(e => e.id == 5).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "initiatives").at(0)!.entries.filter(e => e.id == 4).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "initiatives").at(0)!.entries.filter(e => e.id == 5).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "initiatives").at(0)!.entries.filter(e => e.id == 6).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "initiatives").at(0)!.entries.filter(e => e.id == 7).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "initiatives").at(0)!.entries.filter(e => e.id == 8).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "initiatives").at(0)!.entries.filter(e => e.id == 9).at(0)!.active = true;
-  }
-
-  setDefaultAdmin(): void {
-    this.setAllClear();
-    this.preferences.groups.filter(g => g.name == "datarepos").at(0)!.entries.filter(e => e.id == 1).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "datarepos").at(0)!.entries.filter(e => e.id == 2).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "datarepos").at(0)!.entries.filter(e => e.id == 3).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "datarepos").at(0)!.entries.filter(e => e.id == 4).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "dmp").at(0)!.entries.filter(e => e.id == 1).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "publication").at(0)!.entries.filter(e => e.id == 1).at(0)!.active = true;
-    this.preferences.groups.filter(g => g.name == "sourcerepos").at(0)!.entries.filter(e => e.id == 1).at(0)!.active = true;
-  }
-}
-
-export type Preferences = {
-  groups: Group[]
-}
-
-export type Group = {
-  id: number,
-  name: string,
-  label: string,
-  entries: Entry[],
-  type?: string
-}
-
-export type Entry = {
-  id: number,
-  label: string,
-  description: string,
-  link: string,
-  internallink?: boolean,
-  category?: string,
-  active: boolean,
-}

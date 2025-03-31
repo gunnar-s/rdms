@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConfigService } from '../config.service';
 
 @Component({
   selector: 'studium-home-comp',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './studium-home-comp.component.css'
 })
 export class StudiumHomeCompComponent {
-
+  constructor(public configService: ConfigService) {}
 }

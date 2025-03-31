@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConfigService } from '../../../config.service';
 
 @Component({
   selector: 'reference-management',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './reference-management.component.css'
 })
 export class ReferenceManagementComponent {
-
+  constructor(public configService: ConfigService) {}
 }

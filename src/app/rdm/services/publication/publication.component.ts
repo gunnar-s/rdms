@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ConfigService } from '../../../config.service';
 
 @Component({
   selector: 'publication',
@@ -8,5 +9,5 @@ import { RouterModule } from '@angular/router';
   styleUrl: './publication.component.css'
 })
 export class PublicationComponent {
-
+  constructor(public configService: ConfigService) {}
 }

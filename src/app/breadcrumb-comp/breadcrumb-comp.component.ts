@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { NgForOf, NgIf } from '@angular/common';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { ConfigService } from '../config.service';
 
 @Component({
   selector: 'breadcrumb-comp',
@@ -13,7 +14,7 @@ import { filter } from 'rxjs/operators';
 export class BreadcrumbCompComponent {
   breadcrumbs: Array<{ label: string, url: string }> = [];
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private configService: ConfigService) {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
@@ -38,5 +39,12 @@ export class BreadcrumbCompComponent {
     }
 
     return breadcrumbs;
+  }
+
+  public labelChecker(label: string): string {
+    if (label == 'PLACEHOLDER') {
+      return this.configService.config.name;
+    }
+    return label;
   }
 }

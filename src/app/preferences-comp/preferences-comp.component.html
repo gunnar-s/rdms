@@ -1,5 +1,14 @@
 <div>
     <div class="content-header">Einstellungen</div>
+    <div>
+        <label for="dropdown">Wählen Sie eine Voreinstellung:</label>&nbsp;
+        <select id="dropdown" [(ngModel)]="selectedValue">
+          <option *ngFor="let option of options" [value]="option">
+            {{ option }}
+          </option>
+        </select>&nbsp;
+        <button (click)="onButtonClick()" class="btn btn-primary btn-sm">Setzen</button>
+    </div>
     Hier ausgewählte Services werden auf der Hauptseite angezeigt.
     <div>
         <form #form="ngForm">

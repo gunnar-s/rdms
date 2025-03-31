@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConfigService } from '../../../config.service';
 
 @Component({
   selector: 'guidelines',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './guidelines.component.css'
 })
 export class GuidelinesComponent {
-
+  constructor(public configService: ConfigService) {}
 }

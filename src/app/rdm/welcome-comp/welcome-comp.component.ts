@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConfigService } from '../../config.service';
 
 @Component({
   selector: 'welcome-comp',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './welcome-comp.component.css'
 })
 export class WelcomeCompComponent {
-
+  constructor(public configService: ConfigService) {}
 }
