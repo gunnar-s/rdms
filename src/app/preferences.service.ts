@@ -15,7 +15,7 @@ export class PreferencesService {
         entries: [
           {
             id: 1,
-            label: "BU - Willkommensnachricht",
+            label: "UR - Willkommensnachricht",
             description: "Willkommensnachricht",
             link: "",
             active: false
@@ -30,7 +30,7 @@ export class PreferencesService {
         entries: [
           {
             id: 1,
-            label: "BU - Neuigkeiten",
+            label: "UR - Neuigkeiten",
             description: "Neuigkeiten",
             link: "",
             active: false
@@ -45,7 +45,7 @@ export class PreferencesService {
         entries: [
           {
             id: 1,
-            label: "BU - Events und Termine",
+            label: "UR - Events und Termine",
             description: "Events und Termine",
             link: "",
             active: false
@@ -60,28 +60,28 @@ export class PreferencesService {
         entries: [
           {
             id: 1,
-            label: "BU - Allgemeines Repositorium",
-            description: "Das allgemeine Repositorium der BU. Zu nutzen, wenn sich kein spezifischeres Repositorium anbietet.",
+            label: "UR - Allgemeines Repositorium",
+            description: "Das allgemeine Repositorium der UR. Zu nutzen, wenn sich kein spezifischeres Repositorium anbietet.",
             link: "https://epub.uni-regensburg.de/cgi/latest_tool",
             active: true
           },
           {
             id: 2,
-            label: "BU - Repositorium des Fachbereichs Physik",
+            label: "UR - Repositorium des Fachbereichs Physik",
             description: "Das Repositorium des Fachbereichs Physik",
             link: "https://epub.uni-regensburg.de/cgi/latest_tool",
             active: false
           },
           {
             id: 3,
-            label: "BU - Repositorium des Fachbereichs Lebenswissenschaften",
+            label: "UR - Repositorium des Fachbereichs Lebenswissenschaften",
             description: "Das Repositorium des Fachbereichs Lebenswissenschaften",
             link: "https://epub.uni-regensburg.de/cgi/latest_tool",
             active: false
           },
           {
             id: 4,
-            label: "BU - Repositorium des Fachbereichs Geistes- und Sozialwissenschaften",
+            label: "UR - Repositorium des Fachbereichs Geistes- und Sozialwissenschaften",
             description: "Das Repositorium des Fachbereichs Geistes- und Sozialwissenschaften",
             link: "https://epub.uni-regensburg.de/cgi/latest_tool",
             active: false
@@ -109,14 +109,14 @@ export class PreferencesService {
         entries: [
           {
             id: 1,
-            label: "BU - RDMO",
-            description: "Die RDMO Instanz der BU",
+            label: "UR - RDMO",
+            description: "Die RDMO Instanz der UR",
             link: "https://rdmo.ur.de/",
             active: true
           },
           {
             id: 2,
-            label: "BU - Guidelines zu Förderorganisationen (One-Step-Funderpages)",
+            label: "UR - Guidelines zu Förderorganisationen (One-Step-Funderpages)",
             description: "Die One-Step-Funderpages bieten eine Übersicht über und Anleitungen für die spezifischen Anforderungen an DMPs einzelner Förderorganisationen.",
             link: "/forschen/forschungsdatenmanagement/standards/guidelines",
             internallink: true,
@@ -138,8 +138,8 @@ export class PreferencesService {
         entries: [
           {
             id: 1,
-            label: "BU - Publikationsserver",
-            description: "Der Publikationsserver der BU.",
+            label: "UR - Publikationsserver",
+            description: "Der Publikationsserver der UR.",
             link: "https://epub.uni-regensburg.de/",
             active: true
           },
@@ -152,7 +152,7 @@ export class PreferencesService {
         entries: [
           {
             id: 1,
-            label: "BU - Gitlab des Fachbereichs Informatik",
+            label: "UR - Gitlab des Fachbereichs Informatik",
             description: "Das Gitlab des Fachbereichs Informatik.",
             link: "https://www.uni-regensburg.de/rechenzentrum/serviceangebot/server-cloud-service/gitlab/index.html",
             active: true

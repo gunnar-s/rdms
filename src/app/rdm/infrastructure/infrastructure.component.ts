@@ -1,6 +1,7 @@
 import { NgForOf } from '@angular/common';
 import { Component } from '@angular/core';
 import infrastructureJson from '../../../../public/infrastructure.json';
+import { ConfigService } from '../../config.service';
 
 @Component({
   selector: 'infrastructure',
