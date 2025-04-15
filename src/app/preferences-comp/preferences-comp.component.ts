@@ -11,7 +11,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 })
 export class PreferencesCompComponent implements OnInit {
   selectedValue: string = '';
-  options: string[] = ['Admin', 'Informatik', 'Physik', 'Geistes- und Sozialwissenschaften'];
+  options: string[] = ['Admin', 'Informatik', 'Physik', 'Medizin', 'Geistes- und Sozialwissenschaften'];
   @ViewChild('form', { static: true })
   ngForm!: NgForm;
   
@@ -31,6 +31,7 @@ export class PreferencesCompComponent implements OnInit {
       case "Admin": this.preferencesService.setDefaultAdmin(); break;
       case "Informatik": this.preferencesService.setDefaultInformatikUser(); break;
       case "Physik": this.preferencesService.setDefaultPhysikUser(); break;
+      case "Medizin": this.preferencesService.setDefaultMedizinUser(); break;
       case "Geistes- und Sozialwissenschaften": this.preferencesService.setDefaultGeistesSozialUser(); break;
       default: break;
     }
