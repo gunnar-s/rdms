@@ -847,6 +847,22 @@ export class PreferencesService {
     this.preferences.groups.filter(g => g.name == "initiatives").at(0)!.entries.filter(e => e.id == 9).at(0)!.active = true;
   }
 
+  setDefaultMedizinUser(): void {
+    this.setAllClear();
+    this.preferences.groups.filter(g => g.name == "ontologies").at(0)!.entries.filter(e => e.id == 7).at(0)!.active = true;
+    this.preferences.groups.filter(g => g.name == "ontologies").at(0)!.entries.filter(e => e.id == 9).at(0)!.active = true;
+    this.preferences.groups.filter(g => g.name == "ontologies").at(0)!.entries.filter(e => e.id == 10).at(0)!.active = true;
+    this.preferences.groups.filter(g => g.name == "ontologies").at(0)!.entries.filter(e => e.id == 11).at(0)!.active = true;
+    this.preferences.groups.filter(g => g.name == "ontologies").at(0)!.entries.filter(e => e.id == 12).at(0)!.active = true;
+    this.preferences.groups.filter(g => g.name == "ontologies").at(0)!.entries.filter(e => e.id == 13).at(0)!.active = true;
+    this.preferences.groups.filter(g => g.name == "ontologies").at(0)!.entries.filter(e => e.id == 16).at(0)!.active = true;
+    this.preferences.groups.filter(g => g.name == "metadata").at(0)!.entries.filter(e => e.id == 19).at(0)!.active = true;
+    this.preferences.groups.filter(g => g.name == "initiatives").at(0)!.entries.filter(e => e.id == 17).at(0)!.active = true;
+    this.preferences.groups.filter(g => g.name == "initiatives").at(0)!.entries.filter(e => e.id == 20).at(0)!.active = true;
+    this.preferences.groups.filter(g => g.name == "initiatives").at(0)!.entries.filter(e => e.id == 21).at(0)!.active = true;
+    this.preferences.groups.filter(g => g.name == "initiatives").at(0)!.entries.filter(e => e.id == 22).at(0)!.active = true;
+  }
+
   setDefaultAdmin(): void {
     this.setAllClear();
     this.preferences.groups.filter(g => g.name == "datarepos").at(0)!.entries.filter(e => e.id == 1).at(0)!.active = true;
